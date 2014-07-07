@@ -5,7 +5,7 @@ describe 'git-log basics', ->
   error = null
 
   before (done) ->
-    gitLog null, {n: 1, reverse: yes}, ['master'], (err, data) ->
+    gitLog null, {n: 1}, ['10e0449'], (err, data) ->
       results = data
       error = err
       done()
@@ -21,18 +21,18 @@ describe 'git-log basics', ->
 
   it 'should return the correct data', ->
     expect(results[0]).to.matchCommit
-      commitHash: '12e02312813c4ccc7e05676ab108d7ac0b0aa392'
-      abbreviatedCommitHash: '12e0231'
-      treeHash: '2f744b768d0c4e57a0ff3a7b4e75f9275ddaf5ab'
-      abbreviatedTreeHash: '2f744b7'
-      parentHashes: null
-      abbreviatedParentHashes: null
+      commitHash: '10e0449d5402a2574468f882a2fc53cacff3c8b8'
+      abbreviatedCommitHash: '10e0449'
+      treeHash: '406d761fba18398d5c01cabd880f17ce14e5305a'
+      abbreviatedTreeHash: '406d761'
+      parentHashes: 'e60f16e1ca70280d167047dfe4a3b9c2d14ad655'
+      abbreviatedParentHashes: 'e60f16e'
       authorName: 'Huafu Gandon'
       authorEmail: 'huafu.gandon@gmail.com'
-      authorDate: 'Mon Jul 07 2014 11:30:48 GMT+0700 (ICT)'
+      authorDate: 'Mon Jul 07 2014 14:02:42 GMT+0700 (ICT)'
       committerName: 'Huafu Gandon'
       committerEmail: 'huafu.gandon@gmail.com'
-      committerDate: 'Mon Jul 07 2014 11:30:48 GMT+0700 (ICT)'
-      subject: 'Initial commit'
+      committerDate: 'Mon Jul 07 2014 14:03:21 GMT+0700 (ICT)'
+      subject: 'First basic version'
 
 

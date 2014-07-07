@@ -12,8 +12,15 @@ chai.use (_chai, utils) ->
       new Assertion(commit).to.have.property(prop)
       if expected.hasOwnProperty(prop) and not /DateRelative$/.test(prop)
         if /Date$/.test(prop)
-          new Assertion(commit[prop].toString()).to.equal expected[prop]
+          exp = expected[prop].toString()
+          act = commit[prop].toString()
         else
-          new Assertion(commit[prop]).to.equal expected[prop]
+          act = commit[prop]
+          exp = expected[prop]
+        @assert act is exp,
+          'expected #{this} to have ' + prop + ' being #{exp} but got #{act}',
+          'expected #{this} to have ' + prop + ' not being #{act}',
+          exp,
+          act
     return
 
