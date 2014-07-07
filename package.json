@@ -1,11 +1,12 @@
 {
-  "name": "git-log",
-  "version": "0.0.0",
+  "name": "git-log-js",
+  "version": "0.0.1",
   "description": "Map git log to node",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script/register --require coffee-script/register --require test/support/loader.coffee --reporter spec"
   },
+  "repository": "https://github.com/huafu/git-log-js.git",
   "keywords": [
     "git",
     "log"
